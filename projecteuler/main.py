@@ -1,6 +1,7 @@
+from problems import ProblemFactory
 
-LASTPROBLEM = 0
-QUITSTRING  = "Q"
+LASTPROBLEM = 1
+QUITSTRING  = 'Q'
 
 def get_user_input():
     """ Get user input from the console
@@ -17,12 +18,12 @@ def check_user_input(user_input):
 
     checkUserInput will validate the user's input. This is a very redimentary
     validation method. It checks three things ...
-    1. Checks for the letter "Q"
+    1. Checks for the letter 'Q'
     2. Checks for an integer
     3. Checks that the integer is positive
     4. Checks that the integer is no greater than the last problem solved.
     These checks assume that problems are solved in order.
-    Note: If the user enters "Q", a minus one is returned to the caller.
+    Note: If the user enters 'Q', a minus one is returned to the caller.
     
     Args:
         userInput: A string entered by the user.
@@ -55,4 +56,13 @@ def check_user_input(user_input):
 problem_number = get_user_input()
 while (problem_number > 0):
     print('problem number is {}'.format(problem_number))
+    solution = ProblemFactory.get_solution(problem_number)
+    result = solution.compute()
+
+    print('\n-----------------------------------------------------------------------')
+    print('Solution to problem {} = {}'.format(problem_number, result))
+#   print('Execution time was ' + Utilities.FormatMilliseconds(totalTime.ElapsedMilliseconds))
+    print('-----------------------------------------------------------------------')
+    print()
+
     problem_number = get_user_input()
