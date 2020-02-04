@@ -1,3 +1,5 @@
+import time
+import utilities
 from problems import ProblemFactory
 
 LASTPROBLEM = 1
@@ -57,11 +59,15 @@ problem_number = get_user_input()
 while (problem_number > 0):
     print('problem number is {}'.format(problem_number))
     solution = ProblemFactory.get_solution(problem_number)
+
+    start_time = time.time()
     result = solution.compute()
+    stop_time = time.time()
+    total_time = stop_time - start_time
 
     print('\n-----------------------------------------------------------------------')
     print('Solution to problem {} = {}'.format(problem_number, result))
-#   print('Execution time was ' + Utilities.FormatMilliseconds(totalTime.ElapsedMilliseconds))
+    print('Execution time was ' + utilities.format_milliseconds(total_time))
     print('-----------------------------------------------------------------------')
     print()
 
