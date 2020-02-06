@@ -1,6 +1,6 @@
 import time
-import utilities
-from problems import ProblemFactory
+from projecteuler.mathlibrary import utilities
+from projecteuler.problems import ProblemFactory
 
 LASTPROBLEM = 1
 QUITSTRING  = 'Q'

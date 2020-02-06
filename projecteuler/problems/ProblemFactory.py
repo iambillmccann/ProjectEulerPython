@@ -18,7 +18,7 @@ def get_solution(problem_number, *args, **kwargs):
 
     solution_class = options[problem_number]
 
-    the_module = import_module(".{}".format(solution_class), "problems")
+    the_module = import_module(".{}".format(solution_class), "projecteuler.problems")
     the_class = getattr(the_module, solution_class)
     instance = the_class(*args, **kwargs)
 
