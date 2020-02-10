@@ -1,5 +1,5 @@
-import time
 import math
+
 from projecteuler.mathlibrary import MathLibrary
 from .IEulerSolution import IEulerSolution
 
