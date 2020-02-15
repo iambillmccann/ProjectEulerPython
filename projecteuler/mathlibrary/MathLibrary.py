@@ -1,3 +1,5 @@
+import math
+
 def arithmetic_series(number_of_terms, first_term, last_term):
     """
     The Arithmetic Series is the sum of an Arithmetic Progression
@@ -11,6 +13,53 @@ def arithmetic_series(number_of_terms, first_term, last_term):
         The value of the Arithmetic Series
     """
     return number_of_terms * (first_term + last_term) / 2
+
+def get_prime(max):
+    """
+    Compute a list of prime number up to a max number
+
+    Args:
+        max               The largest number to check
+
+    Returns:
+        A list of prime numbers
+    """
+    prime_numbers = list()
+
+    for number in range(2, max + 1):
+
+        is_prime = True
+        for divisor in prime_numbers:
+            if math.sqrt(number) < divisor: break
+            if is_multiple(number, divisor): is_prime = False
+        if is_prime: prime_numbers.append(number)
+    
+    return prime_numbers
+
+def get_factors(number, prime_numbers):
+    """
+    Calculate the list of prime factors for a number
+
+    ToDo: rewrite this with a while loop to see if there is performance improvement
+
+    Args:
+        number            The number to find the factors of
+        prime_numbers     The list of prime numbers
+
+    Returns:
+        A list of prime factors
+    """
+    factors = list()
+    for prime_number in prime_numbers:
+        if math.sqrt(number) < prime_number: break
+        if is_multiple(number, prime_number):
+            factors.append(prime_number)
+            next_number = number / prime_number
+            if next_number in prime_numbers: factors.append(next_number)
+            else: factors = factors + get_factors(next_number, prime_numbers)
+            break
+
+    return factors
 
 def is_multiple(value, divisor):
     """

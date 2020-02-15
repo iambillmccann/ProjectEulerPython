@@ -14,7 +14,8 @@ def get_solution(problem_number, *args, **kwargs):
 
     options = { 0 : "GenericSolution",
         1 : "Multiple3or5", 
-        2 : "EvenFibonacci" }
+        2 : "EvenFibonacci",
+        3 : "LargestPrimeFactor" }
 
     solution_class = options[problem_number]
 
