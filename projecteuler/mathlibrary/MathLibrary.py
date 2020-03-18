@@ -75,4 +75,23 @@ def is_multiple(value, divisor):
     if divisor == 0: return False
     if value % divisor == 0: return True
     return False
-    
+
+def reverse_digits(number):
+    """
+    Reverse the order of digits in an integer such that 1234 becomes 4321
+
+    Args:
+        number             The number to reverse
+
+    Returns:
+        The number with digits reversed
+    """
+    result = 0
+    work_number = number
+
+    while work_number > 0:
+        remainder = work_number % 10
+        result = result * 10 + remainder
+        work_number = int(work_number / 10)
+
+    return result
