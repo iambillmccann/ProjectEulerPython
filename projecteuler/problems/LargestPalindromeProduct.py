@@ -20,6 +20,10 @@ class LargestPalindromeProduct(IEulerSolution):
         for number1 in range (100, 1000):
             for number2 in range (100, 1000):
                 product = number1 * number2
+#                product_as_string = str(product)
+#                if product_as_string[0] == product_as_string[~0]:
+#                    if (product_as_string == product_as_string[:: ~0]) & (product > result):
+#                        result = product
                 if (MathLibrary.reverse_digits(product) == product) & (product > result):
                     result = product
 
