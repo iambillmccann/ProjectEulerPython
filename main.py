@@ -2,7 +2,7 @@ import time
 from projecteuler.mathlibrary import utilities
 from projecteuler.problems import ProblemFactory
 
-LASTPROBLEM = 4
+LASTPROBLEM = 5
 QUITSTRING  = 'Q'
 
 def get_user_input():
