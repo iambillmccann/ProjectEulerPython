@@ -17,7 +17,8 @@ def get_solution(problem_number, *args, **kwargs):
         2 : "EvenFibonacci",
         3 : "LargestPrimeFactor",
         4 : "LargestPalindromeProduct",
-        5 : "SmallestMultiple" }
+        5 : "SmallestMultiple",
+        6 : "SumSquareDifference" }
 
     solution_class = options[problem_number]
 

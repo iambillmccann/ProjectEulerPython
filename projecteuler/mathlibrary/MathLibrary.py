@@ -95,3 +95,24 @@ def reverse_digits(number):
         work_number = int(work_number / 10)
 
     return result
+
+def square(number):
+    return number * number
+
+def sum_natural(number):
+    """
+    Compute the sum of natural numbers up to and including number.
+    """
+    result = 0
+    if number < 1: return result
+    for sequence in range(1, number + 1): result += sequence
+    return result
+
+def sum_natural_squares(number):
+    """
+    Compute the sum of squares for natural numbers up to and including number.
+    """
+    result = 0
+    if number < 1: return result
+    for sequence in range(1, number + 1): result += square(sequence)
+    return result

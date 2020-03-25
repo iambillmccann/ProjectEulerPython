@@ -29,3 +29,19 @@ def test_fail_multiples():
     assert False == MathLibrary.is_multiple(19, 18)
     assert False == MathLibrary.is_multiple(23, 2)
     assert False == MathLibrary.is_multiple(37, 6)
+
+def test_square():
+
+    assert 0 == MathLibrary.square(0)
+    assert 1 == MathLibrary.square(-1)
+    assert 25 == MathLibrary.square(5)
+
+def test_natural_sum():
+    assert MathLibrary.sum_natural(10) == 55
+    assert MathLibrary.sum_natural(0) == 0
+    assert MathLibrary.sum_natural(-10) == 0
+
+def test_nutural_sum_squares():
+    assert MathLibrary.sum_natural_squares(10) == 385
+    assert MathLibrary.sum_natural_squares(0) == 0
+    assert MathLibrary.sum_natural_squares(-10) == 0
