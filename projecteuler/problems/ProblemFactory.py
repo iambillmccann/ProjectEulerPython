@@ -1,6 +1,4 @@
 from importlib import import_module
-from .IEulerSolution import IEulerSolution
-from .Multiple3or5 import Multiple3or5
 
 def get_solution(problem_number, *args, **kwargs):
     """ Factory Pattern to select a class that runs the solution
@@ -14,7 +12,13 @@ def get_solution(problem_number, *args, **kwargs):
         The class that will solve the problem.
     """
 
-    options = { 0 : "GenericSolution", 1 : "Multiple3or5" }
+    options = { 0 : "GenericSolution",
+        1 : "Multiple3or5", 
+        2 : "EvenFibonacci",
+        3 : "LargestPrimeFactor",
+        4 : "LargestPalindromeProduct",
+        5 : "SmallestMultiple",
+        6 : "SumSquareDifference" }
 
     solution_class = options[problem_number]
 
