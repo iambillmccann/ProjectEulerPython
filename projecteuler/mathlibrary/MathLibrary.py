@@ -1,3 +1,5 @@
+from functools import reduce
+
 import math
 
 def arithmetic_series(number_of_terms, first_term, last_term):
@@ -95,6 +97,9 @@ def reverse_digits(number):
         work_number = int(work_number / 10)
 
     return result
+
+def series_product(numbers):
+    return reduce( lambda x, y: x * y, numbers )
 
 def square(number):
     return number * number
