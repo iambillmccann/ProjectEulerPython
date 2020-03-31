@@ -55,15 +55,18 @@ def test_get_prime():
     primes = MathLibrary.get_prime(23)
     assert len(primes) == 9
     primes = MathLibrary.get_prime(7920)
-    print (len(primes))
     assert len(primes) == 1000
     assert primes[-1] == 7919
 
 def test_series_product():
 
-    numbers = [ 2, 3, 4, 5]
+    numbers = [ 2, 3, 4, 5 ]
     assert MathLibrary.series_product(numbers) == 120
     numbers = [ 0, 999, 33, -1, 10]
     assert MathLibrary.series_product(numbers) == 0
     numbers = [9, 9, 8, 9]
     assert MathLibrary.series_product(numbers) == 5832
+
+def test_series_sum():
+    numbers = [2, 3, 5, 7]
+    assert MathLibrary.series_sum(numbers) == 17

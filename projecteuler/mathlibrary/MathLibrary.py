@@ -26,9 +26,9 @@ def get_prime(max):
     Returns:
         A list of prime numbers
     """
-    prime_numbers = list()
+    prime_numbers = [2, 3, 5, 7]
 
-    for number in range(2, max + 1):
+    for number in range(9, max + 1, 2):
 
         is_prime = True
         for divisor in prime_numbers:
@@ -100,6 +100,9 @@ def reverse_digits(number):
 
 def series_product(numbers):
     return reduce( lambda x, y: x * y, numbers )
+
+def series_sum(numbers):
+    return reduce( lambda x, y: x + y, numbers )
 
 def square(number):
     return number * number
