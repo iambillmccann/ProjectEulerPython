@@ -7,7 +7,7 @@ It is important to code every day to keep our skills sharp. I have created this 
 ## Structure of this code
 This application runs as a console application. It is build for Python 3.6. It was developed on Ubuntu Linux via the WSL and a virtual environment named "venv". The main program (main.py) runs from the root folder. There are two modules off the root. These are:
 
-- ** projecteuler ** this is the modules for the solution's classes and function libraries.
+- ** projecteuler ** this is the module for the solution's classes and function libraries.
 - ** tests ** these are the unit tests for the solution.
 
 ## Main Program
