@@ -70,3 +70,9 @@ def test_series_product():
 def test_series_sum():
     numbers = [2, 3, 5, 7]
     assert MathLibrary.series_sum(numbers) == 17
+
+def test_get_divisors():
+    assert MathLibrary.get_divisors(1) == [1]
+    assert MathLibrary.get_divisors(3) == [1, 3]
+    divisors = MathLibrary.get_divisors(28)
+    assert 1 in divisors and 2 in divisors and 4 in divisors and 7 in divisors and 14 in divisors and 28 in divisors
