@@ -16,6 +16,27 @@ def arithmetic_series(number_of_terms, first_term, last_term):
     """
     return number_of_terms * (first_term + last_term) / 2
 
+def get_divisors(number):
+    """
+    Compuute a list of divisors of the parameter (number)
+
+    Args:
+        number      The number to find the divisors of
+
+    Returns:
+        A list of the divisors of number
+    """
+    divisors = []
+    limit = math.floor( math.sqrt(number) + 1 )
+
+    for  divisor in range(1, limit):
+        if is_multiple(number, divisor):
+            divisors.append(divisor)
+            quotient = number / divisor
+            if (divisor != quotient) and (number != divisor): divisors.append(quotient)
+
+    return divisors
+
 def get_prime(max):
     """
     Compute a list of prime number up to a max number
