@@ -129,5 +129,8 @@ dmypy.json
 .pyre/
 
 # My stuff
+.vscode/
+.metals/
 metals*
 .metals*
+.metals/metals.h2.db
