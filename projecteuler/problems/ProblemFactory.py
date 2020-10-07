@@ -24,7 +24,8 @@ def get_solution(problem_number, *args, **kwargs):
         9 : "PythagoreanTriplet",
         10 : "SummationPrimes",
         11 : "LargestProductGrid",
-        12 : "HighlyDivisibleTriangle" }
+        12 : "HighlyDivisibleTriangle",
+        13 : "LargeSum" }
 
     solution_class = options[problem_number]
 
