@@ -2,10 +2,11 @@ from functools import reduce
 
 import math
 
+
 def arithmetic_series(number_of_terms, first_term, last_term):
     """
     The Arithmetic Series is the sum of an Arithmetic Progression
-    
+
     Args:
         number_of_terms   Number of terms in the series
         first_term        The first term
@@ -15,6 +16,7 @@ def arithmetic_series(number_of_terms, first_term, last_term):
         The value of the Arithmetic Series
     """
     return number_of_terms * (first_term + last_term) / 2
+
 
 def get_divisors(number):
     """
@@ -27,15 +29,17 @@ def get_divisors(number):
         A list of the divisors of number
     """
     divisors = []
-    limit = math.floor( math.sqrt(number) + 1 )
+    limit = math.floor(math.sqrt(number) + 1)
 
-    for  divisor in range(1, limit):
+    for divisor in range(1, limit):
         if is_multiple(number, divisor):
             divisors.append(divisor)
             quotient = number / divisor
-            if (divisor != quotient) and (number != divisor): divisors.append(quotient)
+            if (divisor != quotient) and (number != divisor):
+                divisors.append(quotient)
 
     return divisors
+
 
 def get_prime(max):
     """
@@ -53,11 +57,15 @@ def get_prime(max):
 
         is_prime = True
         for divisor in prime_numbers:
-            if math.sqrt(number) < divisor: break
-            if is_multiple(number, divisor): is_prime = False
-        if is_prime: prime_numbers.append(number)
-    
+            if math.sqrt(number) < divisor:
+                break
+            if is_multiple(number, divisor):
+                is_prime = False
+        if is_prime:
+            prime_numbers.append(number)
+
     return prime_numbers
+
 
 def get_factors(number, prime_numbers):
     """
@@ -74,15 +82,19 @@ def get_factors(number, prime_numbers):
     """
     factors = list()
     for prime_number in prime_numbers:
-        if math.sqrt(number) < prime_number: break
+        if math.sqrt(number) < prime_number:
+            break
         if is_multiple(number, prime_number):
             factors.append(prime_number)
             next_number = number / prime_number
-            if next_number in prime_numbers: factors.append(next_number)
-            else: factors = factors + get_factors(next_number, prime_numbers)
+            if next_number in prime_numbers:
+                factors.append(next_number)
+            else:
+                factors = factors + get_factors(next_number, prime_numbers)
             break
 
     return factors
+
 
 def is_multiple(value, divisor):
     """
@@ -95,9 +107,12 @@ def is_multiple(value, divisor):
     Returns:
         True if the numbers divide evenly, False otherwise
     """
-    if divisor == 0: return False
-    if value % divisor == 0: return True
+    if divisor == 0:
+        return False
+    if value % divisor == 0:
+        return True
     return False
+
 
 def reverse_digits(number):
     """
@@ -119,29 +134,38 @@ def reverse_digits(number):
 
     return result
 
+
 def series_product(numbers):
-    return reduce( lambda x, y: x * y, numbers )
+    return reduce(lambda x, y: x * y, numbers)
+
 
 def series_sum(numbers):
-    return reduce( lambda x, y: x + y, numbers )
+    return reduce(lambda x, y: x + y, numbers)
+
 
 def square(number):
     return number * number
+
 
 def sum_natural(number):
     """
     Compute the sum of natural numbers up to and including number.
     """
     result = 0
-    if number < 1: return result
-    for sequence in range(1, number + 1): result += sequence
+    if number < 1:
+        return result
+    for sequence in range(1, number + 1):
+        result += sequence
     return result
+
 
 def sum_natural_squares(number):
     """
     Compute the sum of squares for natural numbers up to and including number.
     """
     result = 0
-    if number < 1: return result
-    for sequence in range(1, number + 1): result += square(sequence)
+    if number < 1:
+        return result
+    for sequence in range(1, number + 1):
+        result += square(sequence)
     return result
